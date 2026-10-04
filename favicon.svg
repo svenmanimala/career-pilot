@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00A389" />
+      <stop offset="50%" stop-color="#00C996" />
+      <stop offset="100%" stop-color="#4EEDB7" />
+    </linearGradient>
+  </defs>
+  <!-- Background Circle (inset by 1px to keep the 2px stroke crisp) -->
+  <circle cx="32" cy="32" r="30" fill="#011E26" stroke="#00C996" stroke-width="2" />
+  <!-- Radar Crosshairs -->
+  <circle cx="32" cy="32" r="20" fill="none" stroke="rgba(0, 201, 150, 0.3)" stroke-width="1.5" />
+  <circle cx="32" cy="32" r="11" fill="none" stroke="rgba(0, 201, 150, 0.4)" stroke-width="1.5" />
+  <!-- Pilot Navigation Arrow -->
+  <polygon points="32,16 42,42 32,36 22,42" fill="url(#glow)" />
+</svg>
