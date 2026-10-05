@@ -822,56 +822,41 @@ elif st.session_state.step == "results":
     score = audit.get("match_score", 85)
     score_color = "#00c996" if score >= 80 else ("#FBBF24" if score >= 60 else "#F87171")
 
+# ---------------------------------------------------------
+    # TOP HEADER & TARGET IDENTIFIER
     # ---------------------------------------------------------
-    # TOP HEADER & CONTROLS (SINGLE INSTANCE)
-    # ---------------------------------------------------------
-    c_top_title, c_top_btn = st.columns([3.4, 1.2], vertical_alignment="center")
+    badge_label = (
+        "AI Skillset-Matched Radar"
+        if st.session_state.target_mode == "Auto-Discover"
+        else "Custom Target Radar"
+    )
+    st.markdown(
+        f"""
+        <div style="margin-bottom: 4px;">
+            <span style="background: rgba(56, 189, 248, 0.12); color: #38BDF8; padding: 4px 14px; border-radius: 9999px; font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; border: 1px solid rgba(56, 189, 248, 0.3);">
+                {badge_label} Ready
+            </span>
+            <h2 style="font-size: 2.2rem; font-weight: 800; color: #F8FAFC; margin: 8px 0 0 0;">
+                Target: {st.session_state.target_query}
+            </h2>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
-    with c_top_title:
-        badge_label = "AI Skillset-Matched Radar" if st.session_state.target_mode == "Auto-Discover" else "Custom Target Radar"
+    if careers_url:
         st.markdown(
             f"""
-            <div style="margin-bottom: 4px;">
-                <span style="background: rgba(56, 189, 248, 0.12); color: #38BDF8; padding: 4px 14px; border-radius: 9999px; font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; border: 1px solid rgba(56, 189, 248, 0.3);">
-                    {badge_label} Ready
-                </span>
-                <h2 style="font-size: 2.1rem; font-weight: 800; color: #F8FAFC; margin: 6px 0 0 0;">
-                    Target: {st.session_state.target_query}
-                </h2>
+            <div style="margin-top: 14px; margin-bottom: 22px;">
+                <a href="{careers_url}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 61, 77, 0.65); border: 1px solid rgba(0, 201, 150, 0.55); color: #00FFBE; text-decoration: none; padding: 8px 18px; border-radius: 9px; font-weight: 700; font-size: 0.84rem; box-shadow: 0 0 15px rgba(0, 201, 150, 0.2); transition: all 0.2s ease;">
+                    🌐 Official Careers / Lab Portal ↗
+                </a>
             </div>
             """,
             unsafe_allow_html=True,
         )
-
-        if careers_url:
-            st.markdown(
-                f"""
-                <div style="margin-top: 14px; margin-bottom: 22px;">
-                    <a href="{careers_url}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 61, 77, 0.65); border: 1px solid rgba(0, 201, 150, 0.55); color: #00FFBE; text-decoration: none; padding: 8px 18px; border-radius: 9px; font-weight: 700; font-size: 0.84rem; box-shadow: 0 0 15px rgba(0, 201, 150, 0.2); transition: all 0.2s ease;">
-                        🌐 Official Careers / Lab Portal ↗
-                    </a>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
-
-    with c_top_btn:
-        st.markdown('<div class="header-action-right">', unsafe_allow_html=True)
-        if st.button("↺ Start Over", key="btn_start_over"):
-            st.session_state.step = "input"
-            st.session_state.student_text = ""
-            st.session_state.is_pdf = False
-            st.session_state.pdf_bytes = None
-            st.session_state.pdf_filename = ""
-            st.session_state.audit_data = None
-            st.session_state.simplified = False
-            st.session_state.simple_data = None
-            st.session_state.deep_dive_data = None
-            st.session_state.invalid_reason = ""
-            st.session_state.pop("res_subj", None)
-            st.session_state.pop("res_body", None)
-            st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
+    else:
+        st.write("")
 
     # Skillset-Driven Recommendations Banner
     if st.session_state.target_mode == "Auto-Discover" and st.session_state.recommended_targets:
@@ -1265,6 +1250,27 @@ elif st.session_state.step == "results":
         st.json(profile)
         st.markdown("##### Live Unfiltered Web Citations (Tavily Search)")
         st.text_area("Web Corpus Snippets:", value=docs, height=160)
+
+        # ---------------------------------------------------------
+    # BOTTOM ACTION: CENTERED RESET BUTTON
+    # ---------------------------------------------------------
+    st.markdown("<div style='margin-top: 50px;'></div>", unsafe_allow_html=True)
+    _, col_reset_center, _ = st.columns([1.5, 2.0, 1.5])
+    with col_reset_center:
+        if st.button("↺ Start Over with New Profile or Target", key="btn_start_over", type="primary"):
+            st.session_state.step = "input"
+            st.session_state.student_text = ""
+            st.session_state.is_pdf = False
+            st.session_state.pdf_bytes = None
+            st.session_state.pdf_filename = ""
+            st.session_state.audit_data = None
+            st.session_state.simplified = False
+            st.session_state.simple_data = None
+            st.session_state.deep_dive_data = None
+            st.session_state.invalid_reason = ""
+            st.session_state.pop("res_subj", None)
+            st.session_state.pop("res_body", None)
+            st.rerun()
 
 # =========================================================
 # FIXED FOOTER
