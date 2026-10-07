@@ -1,4 +1,4 @@
-# 🧭 CareerPilot | Autonomous Career Radar & Technical Copilot
+# 🧭 CareerPilot | Autonomous Career Radar & Technical Support Agent
 
 > **Built for the Nebius x NVIDIA Hackathon 2026**
 > _Autonomous opportunity discovery, codebase-to-lab fit auditing, and context-grounded outreach synthesis powered by NVIDIA Nemotron on Nebius Token Factory & Tavily Search._
@@ -46,8 +46,8 @@ Most technical cold outreach fails because students rely on rigid, generic templ
                                    ▼
         ┌──────────────────────────────────────────────────────┐
         │   NVIDIA Nemotron-3-Ultra-550b (Nebius Factory)      │
-        │   • Language extraction & runtime profiling          │
-        │   • Flagship project architecture parsing            │
+        │     • Language extraction & runtime profiling        │
+        │     • Flagship project architecture parsing          │
         └──────────────────────────┬───────────────────────────┘
                                    │
               ┌────────────────────┴────────────────────┐
@@ -59,23 +59,23 @@ Most technical cold outreach fails because students rely on rigid, generic templ
                                    ▼
         ┌──────────────────────────────────────────────────────┐
         │                Tavily Search Agent                   │
-        │   • Live ArXiv preprints & faculty pages             │
-        │   • Current team requisites & technical focus        │
+        │    • Live ArXiv preprints & faculty pages            │
+        │    • Current team requisites & technical focus       │
         └──────────────────────────┬───────────────────────────┘
                                    │
                                    ▼
         ┌──────────────────────────────────────────────────────┐
         │         Nemotron Socratic Fit Cross-Audit            │
-        │   • Synergy Scoring & Skill-Gap Isolation            │
-        │   • Grounded Cold Outreach Generation                │
-        │   • 30-Day Contribution Roadmap & Interview Prep     │
+        │     • Synergy Scoring & Skill-Gap Isolation          │
+        │     • Grounded Cold Outreach Generation              │
+        │     • 30-Day Contribution Roadmap & Interview Prep   │
         └──────────────────────────┬───────────────────────────┘
                                    │
                                    ▼
         ┌──────────────────────────────────────────────────────┐
         │      CareerPilot UI (Streamlit Dark Cyberpunk)       │
-        │   • Live Monospace Execution Terminal                │
-        │   • 4-Section Intelligence Report & ELI5 Toggle      │
+        │     • Live Monospace Execution Terminal              │
+        │     • 4-Section Intelligence Report & ELI5 Toggle    │
         └──────────────────────────────────────────────────────┘
 ```
 
