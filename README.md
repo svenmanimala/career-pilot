@@ -1,4 +1,4 @@
-# 🧭 CareerPilot | Autonomous Career Radar & Technical Support Agent
+# 🧭 CareerPilot | Autonomous Career Radar & Support Agent
 
 > **Built for the Nebius x NVIDIA Hackathon 2026**
 > _Autonomous opportunity discovery, codebase-to-lab fit auditing, and context-grounded outreach synthesis powered by NVIDIA Nemotron on Nebius Token Factory & Tavily Search._
