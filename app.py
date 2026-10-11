@@ -9,6 +9,7 @@ from openai import OpenAI
 import pypdf
 import streamlit as st
 import streamlit.components.v1 as components
+from streamlit_pdf_viewer import pdf_viewer
 from tavily import TavilyClient
 
 # ---------------------------------------------------------
@@ -1228,11 +1229,13 @@ elif st.session_state.step == "results":
                 show_pdf = st.toggle("📄 Preview Uploaded PDF Document", value=False)
 
             if show_pdf and st.session_state.get("pdf_bytes"):
-                b64_pdf = base64.b64encode(st.session_state.pdf_bytes).decode("utf-8")
-                pdf_iframe = f'<iframe src="data:application/pdf;base64,{b64_pdf}" width="100%" height="650" type="application/pdf" style="border-radius: 12px; border: 1px solid rgba(0, 201, 150, 0.4); margin-top: 15px;"></iframe>'
-                st.markdown(pdf_iframe, unsafe_allow_html=True)
+                pdf_viewer(
+                    input=st.session_state.pdf_bytes,
+                    height=650,
+                    render_text=True
+                )
 
-    st.write("")
+                st.write("")
 
     # ---------------------------------------------------------
     # CLEAN LOG TELEMETRY EXPANDER
