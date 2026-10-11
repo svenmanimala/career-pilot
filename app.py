@@ -1278,11 +1278,13 @@ elif st.session_state.step == "results":
 # =========================================================
 # FIXED FOOTER
 # =========================================================
+st.markdown("---")
 st.markdown(
-    f"""
-<div class="app-footer">
-    Powered by <b>{FORMATTED_MODEL_NAME}</b> on <b>Nebius Token Factory</b> & <b>Tavily Search</b> &bull; Built for Nebius x NVIDIA Hackathon 2026
-</div>
-""",
+    """
+    <div style="text-align: center; color: #888888; font-size: 0.85rem; line-height: 1.6; padding: 10px 0;">
+        Powered by <strong>NVIDIA Nemotron-3-Ultra-550b</strong> on <strong>Nebius Token Factory</strong> &amp; <strong>Tavily Search</strong><br/>
+        Built for <strong>Nebius × NVIDIA Hackathon 2026</strong> by <strong>Team ScouterAI</strong>
+    </div>
+    """,
     unsafe_allow_html=True,
 )
