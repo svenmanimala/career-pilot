@@ -1,7 +1,7 @@
 # 🧭 CareerPilot | Autonomous Career Radar & Agent
 
 > **Built for the Nebius x NVIDIA Hackathon 2026**
-> _Autonomous opportunity discovery, codebase-to-lab fit auditing, and context-grounded outreach synthesis powered by NVIDIA Nemotron on Nebius Token Factory & Tavily Search._
+> _Autonomous opportunity discovery, codebase-to-lab fit auditing, and context-grounded outreach synthesis powered by NVIDIA Nemotron on Nebius Token Factory & Tavily Search by Team ScouterAI._
 
 [![Nebius Token Factory](https://img.shields.io/badge/Inference-Nebius%20Token%20Factory-00c996?style=for-the-badge&logo=cloud)](https://nebius.com)
 [![NVIDIA Nemotron](https://img.shields.io/badge/Model-Nemotron--3--Ultra--550b-76B900?style=for-the-badge&logo=nvidia)](https://developer.nvidia.com)
